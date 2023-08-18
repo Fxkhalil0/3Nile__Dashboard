@@ -1,0 +1,86 @@
+
+<app-nav></app-nav>
+<app-sideNav></app-sideNav>
+
+  <!-- <button type="button" class="add btn btn-outline-info" [routerLink]="['/AddBoat']" >Add Boat Owner</button> -->
+  <button class="custom-btnn btn-15 add" [routerLink]="['/AddBoat']">Add Boat Owner</button>
+  <div class="container">
+  <div class="mat-elevation-z8">
+  <table mat-table [dataSource]="boatOwnerData" class="styled-table">
+
+    <!-- email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef class="tr_table "> email </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{element.email | slice:0:10}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="tr_table "> Name </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- phone Column -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef class="tr_table "> phone </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{element.phone}} </td>
+    </ng-container>
+
+    <!-- imgUrl Column -->
+    <ng-container matColumnDef="imgUrl">
+      <th mat-header-cell *matHeaderCellDef class="tr_table "> image</th>
+      <td mat-cell *matCellDef="let element" class="border-right">
+        <img [src]="'http://localhost:5000/'+ element?.img" width="50" height="50" alt="">
+
+
+
+
+
+      </td>
+    </ng-container>
+
+    <!-- address Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef class="tr_table "> address </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{element.address}} </td>
+    </ng-container>
+
+    <!-- status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef class="tr_table "> status </th>
+      <td mat-cell *matCellDef="let element" class="border-right"> {{element.status}} </td>
+    </ng-container>
+
+        <!-- Button -->
+    <ng-container matColumnDef="button">
+      <th mat-header-cell *matHeaderCellDef="button" class="tr_table ">Chang Status</th>
+      <td mat-cell *matCellDef="let element" class="border-right">
+        <!-- <button *ngIf="element.status != 'accepted'" (click)="changeStatus(element._id)" class="table_but">{{element.status == 'pending'?"accept":"pending"}}</button> -->
+        <button class="custom-btn btn-3" *ngIf="element.status != 'accepted'" (click)="changeStatus(element._id)"><span>{{element.status == 'pending'?"accept":"pending"}}</span></button>
+      </td>
+    </ng-container>
+
+        <!-- Button -->
+    <ng-container matColumnDef="button2">
+      <th mat-header-cell *matHeaderCellDef="button2" class="tr_table ">Details</th>
+      <td mat-cell *matCellDef="let element" class="border-right">
+        <!-- <button [routerLink]="['/Description',element._id]" class="table_but">
+          Show Details</button> -->
+          <button class="custom-btn btn-3" [routerLink]="['/Description',element._id]"><span>Show Details</span></button>
+        </td>
+    </ng-container>
+
+            <!-- Button
+            <ng-container matColumnDef="button3">
+              <th mat-header-cell *matHeaderCellDef="button3"> Button </th>
+              <td mat-cell *matCellDef="let element"><button [routerLink]="['/Description',element._id]">Accept</button></td>
+            </ng-container> -->
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"  class="tr_table "></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[6, 1, 2, 10]" showFirstLastButtons></mat-paginator>
+
+</div>
+</div>

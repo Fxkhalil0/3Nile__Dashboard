@@ -1,0 +1,196 @@
+.modl{
+    width: fit-content;
+    height: fit-content;
+    background-color: red;
+    z-index: 1600;
+    top: 40px;
+    right: 80px;
+    position: absolute
+    ;
+    margin-left: 500px;
+}
+.navbar{
+    position: relative;
+}
+
+.navbar{
+    margin-left: 240px !important;
+    background-color: #fff !important;
+    border: none !important;
+}
+
+.custom-toast {
+    background-color: #a83232 !important;
+    color: #fff;
+  }
+  .toast-top-full-width {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .toast-top-full-width .toast {
+    width: 100%;
+  }
+
+  .toast-top-full-width .toast-title,
+  .toast-top-full-width .toast-message {
+    color: #fff;
+  }
+  .custom-toast .toast-title {
+    font-weight: bold;
+  }
+
+  .custom-toast .toast-message {
+    font-size: 16px;
+  }
+  .notification-icon {
+    color: red;
+  }
+.logout a{
+  padding: 10px 10px;
+  background-color: #114B5F;
+  transition: width 2s;
+  transition-delay: 1s;
+}
+.logout a:hover{
+  padding: 12px 12px;
+  background-color: #F89334;
+}
+.logout span{
+  font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+}
+.nav-list{
+  padding-right: 70px !important;
+
+}
+
+
+
+/* html {
+  height: 100%;
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+} */
+/* .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+} */
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: inherit;
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+}
+.btn {
+  border: 2px solid #000;
+  animation: 0.5s collision ease-in;
+  overflow: hidden;
+  transition: 0.3s 0.1s;
+}
+.btn:active {
+  transform: translateX(100px);
+  background: rgba(255, 255, 255, 0.5);
+}
+.btn p {
+  position: relative;
+  color: #000;
+  font-weight: 700;
+  font-size:20px;
+  z-index: 5;
+  transition: 1s ease-in-out;
+  padding-bottom: 40px;
+}
+.btn:hover p {
+  color: #fff;
+}
+.btn:before, .btn:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #114B5F;
+}
+.btn:hover:before {
+  animation: collisionLeft 1s both;
+  animation-direction: alternate;
+}
+.btn:hover:after {
+  animation: collisionRight 1s both;
+  animation-direction: alternate;
+}
+.btn:before {
+  left: -30%;
+}
+.btn:after {
+  left: 125%;
+}
+@keyframes collisionLeft {
+  0% {
+    left: -30%;
+    width: 20px;
+    height: 20px;
+ }
+  50% {
+    left: 50%;
+    width: 40px;
+    height: 40px;
+ }
+  100% {
+    left: 50%;
+    width: 300px;
+    height: 300px;
+ }
+}
+@keyframes collisionRight {
+  0% {
+    left: 125%;
+    width: 20px;
+    height: 20px;
+ }
+  50% {
+    left: 50%;
+    width: 40px;
+    height: 40px;
+ }
+  100% {
+    left: 50%;
+    width: 300px;
+    height: 300px;
+ }
+}
+.btn-3 {
+  filter: url("#goo");
+  border: none;
+  background: transparent;
+}
+
+
+
+
+
+.modal-dialog
+{
+  max-width: 500px;
+margin: 1.75rem auto;
+margin-left: 855px;
+}

@@ -1,0 +1,93 @@
+<!-- Navbar-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary" style="z-index: 999;">
+  <ul class="modl" id="modal">
+
+  </ul>
+
+
+  <div class="container-fluid justify-content-between">
+    <!-- Left elements -->
+    <div class="d-flex">
+      <!-- Brand -->
+      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+        <p style="font-size: 40px; padding-right: 20px; color: #114B5F;">3Nile</p>
+      </a>
+
+      <!-- Search form -->
+      <form class="input-group w-auto my-auto d-none d-sm-flex">
+        <input
+          autocomplete="off"
+          type="search"
+          class="form-control rounded"
+          placeholder="Search"
+          style="min-width: 125px;"
+        />
+        <span class="input-group-text border-0 d-none d-lg-flex"
+          ><i class="fas fa-search"></i
+        ></span>
+      </form>
+    </div>
+
+
+    <!-- Right elements -->
+
+    <div class="bill-icon" (click)="openNotificationsModal()">
+      <i [ngClass]="{'notification-icon': hasNotification}" class="fas fa-bell fa-fw me-3">
+
+
+        <span *ngIf="hasNotification"  class="notification-count">{{ notificationCount }}</span>
+
+      </i>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" [ngClass]="{ 'show': showNotificationsModal }">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Notifications</h5>
+            <button type="button" class="close" (click)="closeNotificationsModal()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li *ngIf="notificationData.length === 0">
+                <span>No notification yet</span>
+              </li>
+              <li *ngFor="let notification of notificationData" (mouseenter)="markAsRead(notification)">
+                <span [class.read]="notification.read" (click)="navigateToBoatOwner()">
+                  {{ notification.message }}
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="navbar-nav flex-row justify-content-arround align-items-center nav-list">
+      <li class="nav-item me-3 me-lg-1 pr-2">
+        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+          <img [src]="'http://localhost:5000/'+ adminData?.img" width="50" height="50"
+          class="rounded-circle"
+          loading="lazy"
+          alt="">
+          <strong class="d-none d-sm-block ms-1">{{adminData.name}}</strong>
+        </a>
+      </li>
+      <li class="logout">
+        <!-- <a>
+          <span (click)="logout()">LogOut</span>
+        </a> -->
+        <div class="container">
+          <button class="btn btn-3" (click)="logout()">
+            <p>Log Out &rarr;</p>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- Navbar -->

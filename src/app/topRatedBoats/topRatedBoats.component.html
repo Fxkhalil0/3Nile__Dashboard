@@ -1,0 +1,47 @@
+
+<div class="container">
+    <div class="mat-elevation-z8 " >
+        <h1 class="tableTitle"> Top Rated Boats </h1>
+      <table mat-table [dataSource]="boatsDataSource"  class="styled-table">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef  class="tr_table ">No.</th>
+          <td mat-cell *matCellDef="let element"  class="border-right"> {{boatsData.indexOf(element)+1}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef  class="tr_table ">Name</th>
+          <td mat-cell *matCellDef="let element"  class="border-right"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef  class="tr_table ">Port Name</th>
+          <td mat-cell *matCellDef="let element"  class="border-right"> {{element.portName}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef  class="tr_table ">Reviews</th>
+          <td mat-cell *matCellDef="let element"  class="border-right"> {{element.reviews.length}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="stars">
+          <th mat-header-cell *matHeaderCellDef  class="tr_table ">Stars</th>
+          <td mat-cell *matCellDef="let element"  class="border-right">
+            <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+            <i class="fa fa-star" [ngClass]="{'checked': star <=element.averageRating}"></i>
+          </ng-container></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"  class="tr_table "></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[6, 1, 2, 10]" showFirstLastButtons class="paginator"></mat-paginator>
+
+    </div>
+    </div>

@@ -1,0 +1,92 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Exo 2', sans-serif !important;
+}
+
+#toast-container {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    width: 300px;
+
+  }
+
+  /* Override the toast styles */
+  .toast {
+    background-color: #333;
+    color: #fff;
+  }
+
+  /* Override the title styles */
+  .toast-title {
+    font-weight: bold;
+  }
+
+  /* Override the message styles */
+  .toast-message {
+    font-size: 14px;
+    color: #fff;
+  }
+
+  /* Override the close button styles */
+  .toast-close-button {
+    font-size: 16px;
+    color: #fff;
+    background-color: #555;
+  }
+
+  /* Override the success toast styles */
+  .toast-success {
+    background-color: #5cb85c;
+    border-radius: 30px;
+    border: 1px solid white;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  /* Override the error toast styles */
+  .toast-error {
+    background-color: #d9534f;
+  }
+  .bill-icon {
+    position: relative;
+    padding-left: 580px;
+
+  }
+
+
+  .notification-count {
+    position: absolute;
+    top: 0;
+    left: 1 ;
+    color: rgb(255, 0, 0);
+    border-radius: 50%;
+    font-size: 12px;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+  }
+
+  .modal.show {
+    display: block;
+  }
+  li {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  span.read {
+    font-weight: normal;
+    color: #999;
+  }
+
